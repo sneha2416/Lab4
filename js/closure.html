@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function originalFunction(num1){
+            function newFunction(num2){
+                return num1*num2
+            }
+            return newFunction;
+        }
+        let myFunction1 = originalFunction(10);
+        alert(myFunction1(5));
+        let myFunction2 = originalfunction(10);
+        alert(myFunction2(10));
+    </script>
+</body>
+</html>

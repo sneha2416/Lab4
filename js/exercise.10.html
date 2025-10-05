@@ -1,0 +1,39 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercise 10</title>
+</head>
+<body>
+    <h1>This is a square function</h1>
+   <script>
+    function createSquareFunction() {
+    // This function returns a closure
+    function squareFunction() {
+        const input = document.getElementById("numInput").value;
+        const number = parseFloat(input);
+
+        if (!isNaN(number)) {
+            const squared = number * number;
+            document.getElementById("result").innerHTML = `<h3>Square of ${number} is ${squared}</h3>`;
+        } else {
+            document.getElementById("result").innerHTML = `<h3>Please enter a valid number</h3>`;
+        }
+    }
+
+    return squareFunction;
+}
+
+// Closure in action
+const squareFunction = createSquareFunction();
+    
+   </script>
+    <input type="number" id="numInput" placeholder="Enter a number">
+  <button onclick="squareFunction()">Enter</button>
+
+  <div id="result"></div>
+
+</body>
+</html>
